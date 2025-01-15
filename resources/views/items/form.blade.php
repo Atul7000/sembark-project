@@ -87,6 +87,7 @@ document.querySelector('form').addEventListener('submit', function (e) {
     if (itemForms.length === 0) {
         e.preventDefault(); // Prevent form submission
         alert('Please add at least one item before saving.');
+        window.location.reload();
         return false;
     }
 });

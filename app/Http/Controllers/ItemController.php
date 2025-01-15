@@ -31,7 +31,7 @@ class ItemController extends Controller
     {
 
         $validatedData = $request->validate([
-            'items.*.image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'items.*.image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'items.*.title' => 'required|max:255',
             'items.*.description' => 'required|max:250',
             'items.*.quantity' => 'required|integer|min:1',
@@ -42,7 +42,7 @@ class ItemController extends Controller
             // Custom messages for 'image'
             'items.*.image.required' => 'The image field is required.',
             'items.*.image.image' => 'The image field must be a valid image.',
-            'items.*.image.mimes' => 'The image must be of type: jpeg, png, jpg, or gif.',
+            'items.*.image.mimes' => 'The image must be of type : jpeg, png, jpg.',
             'items.*.image.max' => 'The image must not be greater than :max kilobytes.',
             
             // Custom messages for 'description'
