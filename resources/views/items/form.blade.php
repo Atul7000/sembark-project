@@ -71,8 +71,6 @@ document.getElementById('add-item').addEventListener('click', () => {
     newItem.querySelector('.remove-item').classList.remove('d-none');
     itemForms.appendChild(newItem);
 
-    alert(newItem)
-
     itemCount++;
 });
 
