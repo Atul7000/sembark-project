@@ -80,5 +80,15 @@ document.addEventListener('click', function (e) {
         e.target.closest('.item-form').remove();
     }
 });
+
+// Validate form before submission
+document.querySelector('form').addEventListener('submit', function (e) {
+    const itemForms = document.querySelectorAll('.item-form');
+    if (itemForms.length === 0) {
+        e.preventDefault(); // Prevent form submission
+        alert('Please add at least one item before saving.');
+        return false;
+    }
+});
 </script>
 @endpush
