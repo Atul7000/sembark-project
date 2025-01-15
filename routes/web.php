@@ -1,12 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SuperAdminController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UrlController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ItemController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/items', [ItemController::class, 'index'])->name('items.index');
+Route::post('/items', [ItemController::class, 'store'])->name('items.store');
+Route::view('/form', 'items.form');
