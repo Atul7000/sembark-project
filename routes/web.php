@@ -23,21 +23,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
-
-Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
-Route::post('/signup', [AuthController::class, 'processSignup']);
-
-Route::get('/admin/invite', [SuperAdminController::class, 'showInviteForm']);
-Route::post('/admin/invite', [SuperAdminController::class, 'sendInvite']);
-Route::get('/admin/clients', [SuperAdminController::class, 'viewClients']);
-Route::get('/admin/urls', [SuperAdminController::class, 'viewAllUrls']);
-
-Route::get('/urls', [UrlController::class, 'index']);
-Route::post('/urls', [UrlController::class, 'store']);
